@@ -2,7 +2,7 @@
     "name": "communityii/yii2-common",
     "description": "Common classes, traits and utilities for Yii framework 2.0",
     "keywords": ["yii2", "extension", "module", "common", "utilities"],
-    "homepage": "https://github.com/kartik-v/yii2-common",
+    "homepage": "https://github.com/communityii/yii2-common",
     "type": "yii2-extension",
     "license": "BSD 3-Clause",
     "authors": [
