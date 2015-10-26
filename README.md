@@ -1,2 +1,3 @@
 # yii2-common
-Common classes and helper utilities for Yii extensions
+
+Common classes, traits, and helper utilities for Yii extensions
