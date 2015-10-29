@@ -57,7 +57,7 @@ via a database. For simplicity all the plugins in this documentation will be sho
     ],
 ```
 
-The plugin class can be any class that implements the `comyii\common\PluginInterface` interface.
+The plugin class can be any class that implements the `comyii\common\interfaces\PluginInterface` interface.
 
 ```php
 interface PluginInterface
@@ -128,7 +128,7 @@ class MyComponentPlugin implements PluginInterface
 ```
 
 If the component is a module then you can also add controllers and actions to the controller map.
-To create a plugin for a module you must implement the `ModulePluginInterface`.
+To create a plugin for a module you must implement the `comyii\common\interfaces\ModulePluginInterface`.
 
 ```php
 namespace comyii\common\interfaces;
