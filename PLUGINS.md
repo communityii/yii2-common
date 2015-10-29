@@ -189,7 +189,7 @@ Each pluggable component has it's own DI container used for setting and getting 
 ##Problems##
 
 - each plugin's init script is loaded each time the pluggable component is constructed. This may cause performance issues 
-with larger applications or if a plugin is not organized properly ie. plugin loads all of it's code in the init script 
+with larger applications that have lots of plugins or if a plugin is not organized properly ie. plugin loads all of it's code in the init script 
 instead of attaching event handlers to only include code as needed.
 - since components are loaded via an init script this may make the application less readable than using a config file.
 - if two plugins try to attach modules or components with the same id, this or similar situations could create conflicts
