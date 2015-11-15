@@ -11,6 +11,8 @@
 
 namespace comyii\common\traits;
 
+use yii\base\InvalidConfigException;
+
 trait ControllerBehaviorsTrait
 {
     /**
@@ -24,7 +26,7 @@ trait ControllerBehaviorsTrait
      *     behaviors.
      */
     public $controllerBehaviors = [];
-    
+
     /**
      * Gets the controller behaviors configuration
      *

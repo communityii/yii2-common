@@ -9,6 +9,8 @@
  * @author kartik-v https://github.com/kartik-v
  */
 
+ namespace comyii\common\traits;
+
 trait UrlTrait
 {
     /**

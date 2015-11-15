@@ -1,13 +1,18 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @copyright Copyright &copy; Kartik Visweswaran, communityii, 2014 - 2015
+ * @package communityii/yii2-user
+ * @version 1.0.0
+ *
+ * @author derekisbusy https://github.com/derekisbusy
+ * @author kartik-v https://github.com/kartik-v
  */
 
+namespace comyii\common\traits;
+
 trait ViewTrait
-{   
+{
     /**
      * @var array the view to use for each action in the module. The keys will be one of the `self::VIEW_`
      * constants and the value will be the view file name. The view file name can be combined with Yii
