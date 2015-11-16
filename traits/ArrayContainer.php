@@ -19,15 +19,15 @@ namespace comyii\common\traits;
 trait ArrayContainer
 {
     /**
-     * @var array the container
+     * @var array the container property name
      */
-    public $container = [];
+    protected $_containerName = 'container';
     
     public function mergeConfig($config = array()) {
-        if (isset($config['container'])) {
-            $config['container'] = array_replace_recursive($this->getDefaults(), $config['container']);
+        if (isset($config[$this->_containerName])) {
+            $config[$this->_containerName] = array_replace_recursive($this->getDefaults(), $config[$this->_containerName]);
         } else {
-            $config['container'] = $this->getDefaults();
+            $config[$this->_containerName] = $this->getDefaults();
         }
         return $config;
     }
@@ -45,24 +45,24 @@ trait ArrayContainer
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
-            $this->container[] = $value;
+            $this->{$this->_containerName}[] = $value;
         } else {
-            $this->container[$offset] = $value;
+            $this->{$this->_containerName}[$offset] = $value;
         }
     }
 
     public function offsetExists($offset)
     {
-        return isset($this->container[$offset]);
+        return isset($this->{$this->_containerName}[$offset]);
     }
 
     public function offsetUnset($offset)
     {
-        unset($this->container[$offset]);
+        unset($this->{$this->_containerName}[$offset]);
     }
 
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return isset($this->{$this->_containerName}[$offset]) ? $this->{$this->_containerName}[$offset] : null;
     }
 }
