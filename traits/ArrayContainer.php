@@ -11,16 +11,15 @@
 
 namespace comyii\common\traits;
 
-
 /**
- * Class ArrayContainer the action settings for the module.
+ * Trait ArrayContainer implements ArrayAccess using `container` property.
  * 
- * @package comyii\user\components
+ * @package comyii\common\traits
  */
 trait ArrayContainer
 {
     /**
-     * @var array the layouts
+     * @var array the container
      */
     public $container = [];
     
@@ -34,7 +33,7 @@ trait ArrayContainer
     }
     
     /**
-     * Get the default actions
+     * Get the defaults
      * 
      * @return array
      */
