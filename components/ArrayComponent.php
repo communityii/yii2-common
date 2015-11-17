@@ -21,7 +21,7 @@ use comyii\common\traits\ArrayContainer;
  * 
  * @package comyii\user\components
  */
-class ArrayComponent extends Component implements ArrayAccess
+class ArrayComponent extends Component implements \ArrayAccess
 {
     use ArrayContainer;
     
