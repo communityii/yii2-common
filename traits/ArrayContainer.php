@@ -18,12 +18,19 @@ namespace comyii\common\traits;
  */
 trait ArrayContainer
 {
+
     /**
      * @var array the container property name
      */
     protected $_containerName = 'container';
-    
-    public function mergeConfig($config = array()) {
+
+    /**
+     * @var string pointer to current item in list or null
+     */
+    protected $_currentName = 'item';
+
+    public function mergeConfig($config = array())
+    {
         if (isset($config[$this->_containerName])) {
             $config[$this->_containerName] = array_replace_recursive($this->getDefaults(), $config[$this->_containerName]);
         } else {
@@ -31,7 +38,7 @@ trait ArrayContainer
         }
         return $config;
     }
-    
+
     /**
      * Get the defaults
      * 
@@ -63,6 +70,12 @@ trait ArrayContainer
 
     public function offsetGet($offset)
     {
-        return isset($this->{$this->_containerName}[$offset]) ? $this->{$this->_containerName}[$offset] : null;
+        if (isset($this->{$this->_containerName}[$offset])) {
+            $this->{$this->_currentName} = &$this->{$this->_containerName}[$offset];
+        } else {
+            $this->{$this->_currentName} = null;
+        }
+        return $this->{$this->_currentName};
     }
+
 }
