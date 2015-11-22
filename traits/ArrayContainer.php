@@ -48,6 +48,16 @@ trait ArrayContainer
     {
         return [];
     }
+    
+    public function getCurrent()
+    {
+        return $this->{$this->_currentName};
+    }
+    
+    public function setCurrent($value)
+    {
+        $this->{$this->_currentName} = $value;
+    }
 
     public function offsetSet($offset, $value)
     {
