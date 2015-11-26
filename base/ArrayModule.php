@@ -21,7 +21,7 @@ use yii\base\InvalidConfigException;
  * 
  * @package comyii\common\base
  */
-class ArrayModule extends Module
+class ArrayModule extends Module implements \ArrayAccess
 {
 
     use ArrayContainer;
@@ -56,7 +56,7 @@ class ArrayModule extends Module
                     $config = array_replace_recursive($config, $this->_config[$id]);
                 }
                 // module types
-                if (isset($this->_{$this->_containerName}[$key][$id])) {
+                if (isset($this->{$this->_containerName}[$key][$id])) {
                     $config = array_replace_recursive($config, $this->{$this->_containerName}[$key][$id]);
                 }
                 if (!empty($config)) {
@@ -68,7 +68,7 @@ class ArrayModule extends Module
                 }
             }
         }
-        Module::get($id, $throwException);
+        return Module::get($id, $throwException);
     }
 
     public function offsetGet($offset)

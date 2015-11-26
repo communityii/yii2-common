@@ -113,12 +113,12 @@ class Module extends BaseModule
         if (($has = $this->getProperty($name))) {
             return $has;
         }
+        
         if (($config = $this->getConfig($name)) && !empty($config)) {
-            var_dump($config);
             $this->set($name, $config);
             return $this->get($name);
         }
-        return Component::__get($name);
+        return parent::__get($name);
     }
     
     protected function getConfig($name)
@@ -195,7 +195,6 @@ class Module extends BaseModule
         if (isset($this->_components[$id])) {
             return $this->_components[$id];
         }
-
         if (isset($this->_definitions[$id])) {
             $definition = $this->_definitions[$id];
             if (is_object($definition) && !$definition instanceof Closure) {
