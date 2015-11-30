@@ -34,4 +34,14 @@ class ArrayComponent extends Component implements \ArrayAccess
         $config = $this->mergeConfig($config);
         parent::__construct($config);
     }
+
+    public function __set($name, $value)
+    {
+        if (is_int($name)) {
+            $this->{$this->_containerName}[$name] = $value;
+        } else {
+            parent::__set($name, $value);
+        }
+    }
+    
 }
